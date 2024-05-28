@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import {join, dirname} from 'path'
 import {fileURLToPath} from 'url'
 import {engine} from 'express-handlebars'
+import messagesRoutes from "./routes/messages.routes.js"
 
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -24,6 +25,8 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
     res.render('index')
 });
+
+app.use(messagesRoutes);
 
 app.use(express.static(join(__dirname, 'public')))
 
