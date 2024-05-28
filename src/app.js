@@ -4,6 +4,7 @@ import {join, dirname} from 'path'
 import {fileURLToPath} from 'url'
 import {engine} from 'express-handlebars'
 import messagesRoutes from "./routes/messages.routes.js"
+import companyRoutes from "./routes/company.routes.js"
 
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(messagesRoutes);
+app.use(companyRoutes);
 
 app.use(express.static(join(__dirname, 'public')))
 

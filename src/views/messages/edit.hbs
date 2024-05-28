@@ -1,0 +1,40 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase"> Editar Mensaje</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/editMessage/{{message.msg_id}}" method="post">
+
+                        <div class="input-group mt-2">
+                            <label for="msg_id" class="input-group-text"> Id Mensaje </label>
+                            <input class="form-control" type="number" name="msg_id" id="msg_id" value="{{message.msg_id}}" autofocus required disabled>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="incoming_msg_id" class="input-group-text"> Id Entrada Mensaje </label>
+                            <input class="form-control" type="number" name="incoming_msg_id" id="incoming_msg_id" value="{{message.incoming_msg_id}}" required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="outgoing_msg_id" class="input-group-text"> Id Salida Mensaje </label>
+                            <input class="form-control" type="number" name="outgoing_msg_id" id="outgoing_msg_id" value="{{message.outgoing_msg_id}}" required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="msg" class="input-group-text"> Mensaje </label>
+                            <input class="form-control" type="text" name="msg" id="msg" placeholder="Escriba un mensaje" value="{{message.msg}}" required >
+                        </div>
+
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success"> Actualizar </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
